@@ -5,13 +5,15 @@ function comprar(){
     
     let resultanteCompra = totalIngressos - quantidadeIngresso;
     
-    if(resultanteCompra <= 0){
+    if(resultanteCompra < 0){
         alert('a compra não pode ser realizada');
-        return 
+        return;
     }
 
     let ingressosFinal = document.getElementById(`qtd-${tipoDeCadeira}`);
-    ingressosFinal.innerHTML = resultanteCompra;
+    ingressosFinal.innerHTML = resultanteCompra; 
+
+    document.getElementById('qtd').value = '';
 
 }
 
