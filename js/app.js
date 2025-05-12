@@ -7,7 +7,12 @@ function comprar(){
     
     if(resultanteCompra < 0){
         alert('a compra não pode ser realizada');
-        return;
+        return document.getElementById('qtd').value = '';
+    }
+
+    if(quantidadeIngresso < 0){
+        alert('não é possivel comprar uma quantidade de ingressos negativa');
+        return document.getElementById('qtd').value = '';
     }
 
     let ingressosFinal = document.getElementById(`qtd-${tipoDeCadeira}`);
@@ -16,6 +21,3 @@ function comprar(){
     document.getElementById('qtd').value = '';
 
 }
-
-
-
